@@ -20,5 +20,39 @@
   - support for almost every application you can think of
   - sublime/monokai-like superb color distinction
 
-- suggested: [Arch Linux Full-Disk Encryption Installation Guide](https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268)
+<details><summary>unformatted scratch space</summary>
 
+- `edit hyprland.def.conf to configure (add monitor, etc.) and save as hyprland.conf`
+  - suggested: [Arch Linux Full-Disk Encryption Installation Guide](https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268) with linux-hardened kernel
+  - email: aerc
+  - task manager: btop, nvtop (theme included in btop settings)
+  - big editor: doom emacs
+    - config.el: `(setq doom-theme 'doom-dracula)`
+  - litle editor: vis [theme](https://github.com/dracula/vis)
+  - system info: fastfetch
+  - terminal: foot [theme](https://github.com/dracula/foot)
+  - launcher: fuzzel [theme](https://github.com/dracula/fuzzel)
+  - file manager: [nnn](https://github.com/jarun/nnn)
+  - configure gtk: nwg-look [theme](https://github.com/dracula/gtk)
+  - configure qt: kvantum & qt5ct/qt6ct [theme](https://github.com/dracula/gtk/tree/master/kde)
+  - configure mime: selectdefaultapplication
+  - swaylock [theme](https://github.com/dracula/swaylock)
+  - waybar [theme](https://github.com/dracula/waybar)
+  - login shell: dash
+  - interactive shell: bash, until I find something better. ksh is too minimal and problematic.
+  - flatpak global settings, network/filesystem access disabled default
+  - lutris flatpak - sandboxed windows applications
+  - xdg-user-dirs shorthand defaults
+  - more: https://github.com/ibraheemdev/modern-unix
+
+- cursor: https://www.opendesktop.org/u/muha0644
+- wallpaper: https://www.pixiv.net/en/users/2750946
+- font: noto sans cjk
+  - hinting: `none`
+  - antialiasing: `rgba`
+- terminal font: iosevka, https://github.com/be5invis/Sarasa-Gothic
+  - config.el: `(setq doom-font (font-spec :family "iosevka" :size 14))`
+
+inspiration: https://github.com/owl4ce/dotfiles https://github.com/linuxmobile/hyprland-dots 
+
+</details>
