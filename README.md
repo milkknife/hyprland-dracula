@@ -40,6 +40,9 @@
   - waybar [theme](https://github.com/dracula/waybar)
   - login shell: dash
   - interactive shell: bash, until I find something better. ksh is too minimal and problematic.
+  - image viewer: imv
+  - terminal image viewer: chafa
+- ඞ
   - flatpak global settings, network/filesystem access disabled default
   - lutris flatpak - sandboxed windows applications
   - xdg-user-dirs shorthand defaults
@@ -47,6 +50,7 @@
 
 - cursor: https://www.opendesktop.org/u/muha0644
 - wallpaper: https://www.pixiv.net/en/users/2750946
+- icon theme: obsidian
 - font: noto sans cjk
   - hinting: `none`
   - antialiasing: `rgba`
