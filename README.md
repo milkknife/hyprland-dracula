@@ -4,10 +4,12 @@
 
 ## Why
 
+Some people showed interest/asked for my config files. My personal reasons however:
+
 - You don't want to use GNOME/KDE, but you want a reasonable wayland setup
 - You don't want to spend days/weeks setting up something that should be ready out of the box with little to no manual configuration
 - You don't want someone else's unfamiliar, painfully gaudy, and over-complicated setup
-- You are familiar with dwm, dwl, xmonad, and/or awesome-wm
+- You are very familiar with dwm, dwl, xmonad, and/or awesome-wm
 
 ## Details
 
@@ -20,43 +22,63 @@
   - support for almost every application you can think of
   - sublime/monokai-like superb color distinction
 
-<details><summary>unformatted scratch space</summary>
+## How to use
 
-- `edit hyprland.def.conf to configure (add monitor, etc.) and save as hyprland.conf`
-  - suggested: [Arch Linux Full-Disk Encryption Installation Guide](https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268) with linux-hardened kernel
-  - email: aerc
-  - task manager: btop, nvtop (theme included in btop settings)
-  - big editor: doom emacs
-    - config.el: `(setq doom-theme 'doom-dracula)`
-  - litle editor: vis [theme](https://github.com/dracula/vis)
-  - system info: fastfetch
-  - terminal: foot [theme](https://github.com/dracula/foot)
-  - launcher: fuzzel [theme](https://github.com/dracula/fuzzel)
-  - file manager: [nnn](https://github.com/jarun/nnn)
-  - configure gtk: nwg-look [theme](https://github.com/dracula/gtk)
-  - configure qt: kvantum & qt5ct/qt6ct [theme](https://github.com/dracula/gtk/tree/master/kde)
-  - configure mime: selectdefaultapplication
-  - swaylock [theme](https://github.com/dracula/swaylock)
-  - waybar [theme](https://github.com/dracula/waybar)
-  - login shell: dash
-  - interactive shell: bash, until I find something better. ksh is too minimal and problematic.
-  - image viewer: imv
-  - terminal image viewer: chafa
-- ඞ
-  - flatpak global settings, network/filesystem access disabled default
-  - lutris flatpak - sandboxed windows applications
-  - xdg-user-dirs shorthand defaults
-  - more: https://github.com/ibraheemdev/modern-unix
+1. Clone this repository and use the files to your liking.
+2. Edit/run through the settings in `hyprland.def.conf`, and save as `hyprland.conf`
 
-- cursor: https://www.opendesktop.org/u/muha0644
-- wallpaper: https://www.pixiv.net/en/users/2750946
-- icon theme: obsidian
-- font: noto sans cjk
+<details>
+<summary>The rest is up to your personal preferences, but here is roughly what I did... (click to expand)</summary>
+
+---
+
+- **base install**: [Arch Linux Full-Disk Encryption Installation Guide](https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268) with linux-hardened kernel
+- **post install**: [a blog post](https://www.fosskers.ca/en/blog/wayland) helped me figure out which packages/configurations I was missing
+  - take a look at `.profile` in this repository as well
+- **flatpak settings**: hardened and sane defaults
+  ```bash
+  flatpak override --noshare=network \ # whitelist network access for specific packages only when needed
+  --nosocket=x11 --nosocket=fallback-x11 --socket=wayland \ # force wayland, whitelist x11 only when needed (krita, lutris)
+  --filesystem=~/.themes:ro --filesystem=~/.icons:ro --filesystem=xdg-config/fontconfig:ro \ # themes in these folders for flatpaks
+  --filesystem=xdg-run/pipewire-0:ro --filesystem=xdg-config/Kvantum:ro \ # pipewire->pulseaudio setup, Qt style theme, respectively
+  --user # to run without root
+  ```
+  - I suggest using lutris flatpak for sandboxed windows/wine applications (very cool)
+  - [more info on fontconfig](https://wiki.archlinux.org/title/Font_configuration#Set_default_or_fallback_fonts)
+- **xdg-user-dirs**: shorthand defaults in this repo's `.config/user-dirs.dirs`, good for terminal, faster to read/recognize
+- **cli tools**: tools such as ls and grep are outdated. See [modern-unix](https://github.com/ibraheemdev/modern-unix) for arguably superior variants.
+
+### theme specifics:
+
+- **cursor**: [reisen](https://www.opendesktop.org/u/muha0644) animated touhou cursors ported to linux
+- **wallpaper**: [pixiv](https://www.pixiv.net/en/users/2750946) straight from the artists
+- **icon theme**: [obsidian](https://www.opendesktop.org/p/1169579/) is one of the most full-featured icon packs that do not look infantile like papirus.
+- **font**: `noto-fonts`, `noto-fonts-cjk`, `noto-fonts-emoji` (Noto Sans Regular 10)
   - hinting: `none`
   - antialiasing: `rgba`
-- terminal font: iosevka, https://github.com/be5invis/Sarasa-Gothic
-  - config.el: `(setq doom-font (font-spec :family "iosevka" :size 14))`
+- **terminal font**: `iosevka`, [iosevka-cjk](https://github.com/be5invis/Sarasa-Gothic), [iosevka-nerd](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka) (Iosevka:size=12)
+  - emacs config.el: `(setq doom-font (font-spec :family "iosevka" :size 14))`
+  
+### applications:
 
-inspiration: https://github.com/owl4ce/dotfiles https://github.com/linuxmobile/hyprland-dots 
-
+- editing
+  - **big editor**: doom emacs (config.el: `(setq doom-theme 'doom-dracula)`)
+  - **little editor**: vis
+- theming
+  - configure **gtk**: nwg-look [theme](https://github.com/dracula/gtk)
+  - configure **qt**: kvantum & qt5ct/qt6ct [theme](https://github.com/dracula/gtk/tree/master/kde)
+  - configure **mime**: selectdefaultapplication
+- terminal
+  - **terminal**: foot [theme](https://github.com/dracula/foot)
+  - **launcher**: fuzzel [theme](https://github.com/dracula/fuzzel)
+  - **task manager**: btop, nvtop (theme in btop settings)
+  - **system info**: fastfetch
+- wlroots
+  - swaylock [theme](https://github.com/dracula/swaylock)
+  - waybar [theme](https://github.com/dracula/waybar)
+- other
+  - email: aerc
+  - file manager: [nnn](https://github.com/jarun/nnn)
+  - image viewer: imv (imv-dir)
+  - image viewer (terminal): chafa
 </details>
