@@ -47,6 +47,7 @@ Some people showed interest/asked for my config files. My personal reasons howev
   - [more info on fontconfig](https://wiki.archlinux.org/title/Font_configuration#Set_default_or_fallback_fonts)
 - **xdg-user-dirs**: shorthand defaults in this repo's `.config/user-dirs.dirs`, good for terminal, faster to read/recognize
 - **cli tools**: tools such as ls and grep are outdated. See [modern-unix](https://github.com/ibraheemdev/modern-unix) for arguably superior variants.
+  - other: [gnome keyring setup](https://rtfm.co.ua/en/linux-gnome-keyring-setup-as-freedesktop-secretservice/) | [lokinet+dnscrypt-proxy](https://i2p.rocks/blog/lokinet-with-dnscrypt-proxy.html)
 
 ### theme specifics:
 
@@ -74,11 +75,10 @@ Some people showed interest/asked for my config files. My personal reasons howev
   - **task manager**: btop, nvtop (theme in btop settings)
   - **system info**: fastfetch
 - wlroots
-  - swaylock [theme](https://github.com/dracula/swaylock)
-  - waybar [theme](https://github.com/dracula/waybar)
+  - **swaylock** [theme](https://github.com/dracula/swaylock)
+  - **waybar** [theme](https://github.com/dracula/waybar)
 - other
-  - email: aerc
-  - file manager: [nnn](https://github.com/jarun/nnn)
-  - image viewer: imv (imv-dir)
-  - image viewer (terminal): chafa
+  - **email client**: aerc
+  - **file manager**: [nnn](https://github.com/jarun/nnn)
+  - **image viewer**: imv (imv-dir), chafa (terminal)
 </details>
